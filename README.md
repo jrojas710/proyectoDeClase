@@ -1,4 +1,4 @@
-![foto](https://github.com/user-attachments/assets/5f539e9d-c3c3-490b-bce0-89db70b750e7)# 
+<img src="https://github.com/user-attachments/assets/5f539e9d-c3c3-490b-bce0-89db70b750e7" width="300">
 
 👋 Hola, soy Juan Camilo
 
