@@ -6,23 +6,27 @@
 </head>
 <body>
 
-<h1>🚀 TechStore Premium</h1>
+    {{-- NAVBAR --}}
+    @include('layout.navbar')
 
-<div class="grid">
+    <h1>🚀 TechStore Premium</h1>
 
-@foreach($productos as $producto)
-    <div class="card">
-        <img src="{{ $producto['imagen'] }}">
-        <div class="card-body">
-            <h3>{{ $producto['nombre'] }}</h3>
-            <p class="price">$ {{ number_format($producto['precio']) }}</p>
-            <p class="estado">{{ $producto['estado'] }}</p>
-            <a href="#" class="btn">Ver Producto</a>
-        </div>
+    <div class="grid">
+        @foreach($productos as $producto)
+            <div class="card">
+                <img src="{{ $producto['imagen'] }}">
+                <div class="card-body">
+                    <h3>{{ $producto['nombre'] }}</h3>
+                    <p class="price">$ {{ number_format($producto['precio']) }}</p>
+                    <p class="estado">{{ $producto['estado'] }}</p>
+                    <a href="#" class="btn">Ver Producto</a>
+                </div>
+            </div>
+        @endforeach
     </div>
-@endforeach
 
-</div>
+    {{-- FOOTER --}}
+    @include('layout.footer')
 
 </body>
 </html>
