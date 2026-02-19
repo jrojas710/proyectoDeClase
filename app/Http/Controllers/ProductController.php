@@ -18,3 +18,4 @@ class ProductController extends Controller
         return "DETALLE DEL $producto";
     }
 }
+//.
