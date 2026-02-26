@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 
-class Category extends Model
+class CartItem extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
+    protected $table = 'cart_items';
 
     public $incrementing = false;
     protected $keyType = 'string';
@@ -24,5 +24,15 @@ class Category extends Model
                 $model->id = (string) Str::uuid();
             }
         });
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
     }
 }
