@@ -1,32 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tienda TechStore</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+@extends('layout.app')
 
-    {{-- NAVBAR --}}
-    @include('layout.navbar')
-
-    <h1>🚀 TechStore Premium</h1>
-
-    <div class="grid">
-        @foreach($productos as $producto)
-            <div class="card">
-                <img src="{{ $producto['imagen'] }}">
-                <div class="card-body">
-                    <h3>{{ $producto['nombre'] }}</h3>
-                    <p class="price">$ {{ number_format($producto['precio']) }}</p>
-                    <p class="estado">{{ $producto['estado'] }}</p>
-                    <a href="#" class="btn">Ver Producto</a>
+@section('content')
+<div class="container">
+    <div class="product-grid-enhanced">
+        
+        @foreach ($misProductos as $product)
+            <!-- CARD -->
+            <div class="product-card-enhanced">
+                <div class="product-image">
+                    <span class="status-badge badge-active">Activo</span>
+                    <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">{{ $product->name }}</h3>
+                    <div class="product-price">$ {{ $product->price }}</div>
+                    <p class="product-desc">
+                        {{ $product->description }}
+                    </p>
+                    <div class="card-actions">
+                        <button class="btn btn-secondary">Editar</button>
+                        <button class="btn btn-primary">Detalles</button>
+                    </div>
                 </div>
             </div>
-        @endforeach
+        @endforeach 
+
     </div>
-
-    {{-- FOOTER --}}
-    @include('layout.footer')
-
-</body>
-</html>
+</div>
+@endsection
