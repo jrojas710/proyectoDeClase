@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $categoryList = Category::all();
 
-        return view('product.create', [
+        return view('product.create',[
             'categoryList' => $categoryList
         ]);
     }
@@ -30,6 +30,16 @@ class ProductController extends Controller
         $newProduct->description = $request->get('descripcion');
         $newProduct->price = $request->get('precio');
         $newProduct->category_id = $request->get('category_id');
+
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $filename = time() . '-' . $file->getClientOriginalName();
+            
+            $file->move(public_path('images'), $filename);
+            
+            $newProduct->imagen = 'images/' . $filename;
+        }
+
         $newProduct->save();
 
         return back()->with('success', '✨ ¡Producto guardado exitosamente!');
@@ -39,4 +49,4 @@ class ProductController extends Controller
     {
         return view('product.show');
     }
-}   
+}
