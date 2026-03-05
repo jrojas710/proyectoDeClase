@@ -9,17 +9,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id(); // ID normal
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 10, 2);
-            $table->uuid('category_id');
+            
+            // Relación con categorías usando el estándar
+            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
+            
             $table->timestamps();
-
-            $table->foreign('category_id')
-                  ->references('id')
-                  ->on('categories')
-                  ->cascadeOnDelete();
         });
     }
 

@@ -9,23 +9,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cart_items', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
 
-            $table->uuid('product_id');
-            $table->uuid('customer_id');
-
+            // Ambas llaves foráneas ahora son IDs normales
+            $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
+            
             $table->integer('quantity');
             $table->timestamps();
-
-            $table->foreign('product_id')
-                ->references('id')
-                ->on('products')
-                ->cascadeOnDelete();
-
-            $table->foreign('customer_id')
-                ->references('id')
-                ->on('customers')
-                ->cascadeOnDelete();
         });
     }
 
