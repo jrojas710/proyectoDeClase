@@ -318,3 +318,21 @@ nav ul li a:hover {
     border-color: #ff4d6d !important;
     box-shadow: 0 0 8px rgba(255, 77, 109, 0.2);
 }
+.form-delete {
+    display: flex;
+    flex: 1;
+}
+
+.btn-danger {
+    background: rgba(255, 77, 109, 0.1);
+    color: #ff4d6d;
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    width: 100%;
+}
+
+.btn-danger:hover {
+    background: #ff4d6d;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    transform: translateY(-2px);
+}

@@ -5,7 +5,6 @@
     <div class="product-grid-enhanced">
         
         @foreach ($misProductos as $product)
-            <!-- CARD -->
             <div class="product-card-enhanced">
                 <div class="product-image">
                     <span class="status-badge badge-active">Activo</span>
@@ -20,6 +19,12 @@
                     <div class="card-actions">
                         <button class="btn btn-secondary">Editar</button>
                         <button class="btn btn-primary">Detalles</button>
+                        
+                        <form action="{{ route('product.destroy', $product) }}" method="POST" class="form-delete">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
                     </div>
                 </div>
             </div>
