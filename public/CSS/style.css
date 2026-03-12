@@ -306,3 +306,15 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 15px rgba(0, 204, 255, 0.2);
 }
+.error-text {
+    color: #ff4d6d;
+    font-size: 13px;
+    margin-top: 6px;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.form-group .is-invalid {
+    border-color: #ff4d6d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 109, 0.2);
+}
