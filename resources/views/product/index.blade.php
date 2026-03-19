@@ -18,7 +18,7 @@
                     </p>
                     <div class="card-actions">
                         <button class="btn btn-secondary">Editar</button>
-                        <button class="btn btn-primary">Detalles</button>
+                        <a href="{{ route('product.show', $product->id) }}" class="btn btn-primary" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Detalles</a>
                         
                         <form action="{{ route('product.destroy', $product) }}" method="POST" class="form-delete">
                             @method('delete')
