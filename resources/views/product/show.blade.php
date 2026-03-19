@@ -122,7 +122,13 @@
         <p class="show-estado">Disponible</p>
         <p style="font-size: 14px; color: #555;">Envío GRATIS aplicable.</p>
         
-        <button class="btn-add">Agregar al carrito</button>
+    <form action="{{ route('cart.store') }}" method="POST" style="margin: 0; flex: 1;">
+        @csrf
+        <input type="hidden" name="product_id" value="{{ $producto->id }}">
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">
+            Añadir al Carrito 🛒
+        </button>
+    </form>
         <button class="btn-buy">Comprar ahora</button>
     </div>
 
