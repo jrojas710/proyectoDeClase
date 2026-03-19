@@ -25,7 +25,7 @@
             <li><a href="/admin" class="active">📊 Dashboard</a></li>
             <li><a href="{{ route('product.index') }}">📦 Ver Catálogo</a></li>
             <li><a href="{{ route('product.create') }}">➕ Nuevo Producto</a></li>
-            <li><a href="#">👥 Clientes</a></li>
+            <li><a href="{{ route('categories.index') }}">🗂️ Categorías</a></li>
             <li><a href="#">🛒 Pedidos</a></li>
             <li><a href="/" style="margin-top: 50px; color: #ff4d6d;">🏠 Salir a la Tienda</a></li>
         </ul>
