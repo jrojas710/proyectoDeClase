@@ -13,4 +13,7 @@ Route::prefix('product')->controller(ProductController::class)->group(function (
     Route::get('/{producto}', 'show');
     Route::delete('/{product}', 'destroy')->name('product.destroy');
     Route::get('/{id}', 'show')->name('product.show');
+    Route::get('/admin', function () {
+    return view('admin.index');
+    })->name('admin.index');
 });
